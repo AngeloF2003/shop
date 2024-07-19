@@ -10,6 +10,14 @@ import { ProductsComponent } from './products/products.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CartComponent } from './cart/cart.component';
 import { OrderComponent } from './order/order.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { OpenProductsDirective } from './directives/open-products.directive';
+import { OpenProductDetailsDirective } from './directives/open-product-details.directive';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +28,19 @@ import { OrderComponent } from './order/order.component';
     ProductsComponent,
     ProductDetailsComponent,
     CartComponent,
-    OrderComponent
+    OrderComponent,
+    HeaderComponent,
+    FooterComponent,
+    PageNotFoundComponent,
+    OpenProductsDirective,
+    OpenProductDetailsDirective,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

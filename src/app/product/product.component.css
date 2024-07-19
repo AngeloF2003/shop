@@ -26,6 +26,9 @@ img:hover {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.grid-view{
+  color: rgba(147,197,253,.5)
+}
 
 .list-view .title {
   height: 50px;

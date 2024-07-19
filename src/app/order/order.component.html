@@ -1,7 +1,7 @@
 <div class="my-container mx-auto">
 
   <section class="m-3 p-4 border border-dark my-rounded-corner">
-      <h4 class="w-25 border border-secondary text-center py-2 my-rounded-corner">Payment Info</h4>
+      <h4 class="w-25 border border-secondary text-center py-2 my-rounded-corner">Información del pago</h4>
       <table class="table w-50 mx-auto table-bordered table-hover my-shadow">
           <tbody>
               <tr>
@@ -9,19 +9,19 @@
                   <td class="fs-5 fw-bold">user</td>
               </tr>
               <tr>
-                  <td>Total Price</td>
+                  <td>Precio Total</td>
                   <td class="fs-5 fw-bold text-danger"> 1200 </td>
               </tr>
               <tr>
-                  <td>Shipping Charges</td>
+                  <td>Gastos de envío</td>
                   <td class="fs-5 fw-bold text-danger">2000</td>
               </tr>
               <tr>
-                  <td>Discount</td>
+                  <td>Descuento</td>
                   <td class="fs-5 fw-bold text-success">10000</td>
               </tr>
               <tr>
-                  <td>You Have to Pay</td>
+                  <td>Monto a pagar</td>
                   <td class="fs-5 fw-bold text-success">1400</td>
               </tr>
           </tbody>
@@ -29,38 +29,38 @@
   </section>
 
   <section class="m-3 p-4 border border-dark my-rounded-corner">
-      <h4 class="w-25 border border-secondary text-center py-2 my-rounded-corner">Payment Method</h4>
+      <h4 class="w-25 border border-secondary text-center py-2 my-rounded-corner">Forma de Pago</h4>
       <div class="d-flex justify-content-center align-items-center">
-          <h5 class="me-4">Select any Method</h5>
-          <select class="form-select w-25" >
-              <option value="0">Open this select menu</option>
-              <option *ngFor="let paymentMethod of [1,1,1,1]">
-                  10000
-                  <span >metodo</span>
+          <h5 class="me-4">Selecciona forma de pago</h5>
+          <select class="form-select w-25" [formControl]="selectedPaymentMethod">
+              <option value="0">Abrir este menú de selección</option>
+              <option *ngFor="let paymentMethod of [1,1,1,1]" value="{{paymentMethod}}">
+                  opcion
+                  <span >Forma</span>
               </option>
           </select>
       </div>
   </section>
 
   <section class="m-3 p-4 border border-dark my-rounded-corner">
-      <h4 class="w-25 border border-secondary text-center py-2 my-rounded-corner">Proceed to Payments</h4>
-      <div class="mt-4 w-50" >
+      <h4 class="w-25 border border-secondary text-center py-2 my-rounded-corner">Proceder al pago</h4>
+      <div  *ngIf="selectedPaymentMethodName !== ''" class="mt-4 w-50" >
           <table class="table table-bordered my-shadow">
               <thead>
                   <tr>
-                      <td>You have to Pay</td>
+                      <td>Monto a pagar</td>
                       <td> 10000 </td>
                   </tr>
                   <tr>
-                      <td>Payment Method</td>
+                      <td>Forma de pago</td>
                       <td> efectivo </td>
                   </tr>
                   <tr>
-                      <td>Address</td>
+                      <td>Dirección</td>
                       <td *ngIf="true"> av el sol </td>
                   </tr>
                   <tr>
-                      <td>Mobile Number</td>
+                      <td>Telefóno</td>
                       <td *ngIf="true"> numero </td>
                   </tr>
               </thead>
@@ -68,7 +68,7 @@
 
           <div class="d-grid w-50">
               <button type="button" class="btn btn-outline-success mb-4">
-                  Pay
+                  Pagar
               </button>
           </div>
 
@@ -82,6 +82,6 @@
   </section>
 
   <div *ngIf="!false" class="pt-4">
-      <h2>You have not Logged In</h2>
+      <h2>No estas registrado</h2>
   </div>
 </div>

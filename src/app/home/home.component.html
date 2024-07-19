@@ -2,11 +2,11 @@
   <div class="mb-4 my-shadow my-rounded-corner overflow-hidden"
   *ngFor="let suggestedProduct of suggestedProducts">
     <div class="product-baner">
-      <button type="button" class="btn btn-outline-light btn-lg">Compra ya!</button>
+      <button type="button">Compra ya!</button>
       <img src="../../assets/Images/Images/{{suggestedProduct.banerimage}}" alt="Baner Image" class="w-100">
     </div>
 
-    <div class="product-list py-5">
+    <div class="product-list py-5 fs-5 my-2 px-4 py-2 mt-4 gap-3">
       <app-suggested-products [category]="suggestedProduct.category">
 
       </app-suggested-products>

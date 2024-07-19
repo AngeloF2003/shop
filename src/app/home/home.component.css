@@ -1,5 +1,24 @@
+
+
 .product-baner button {
   position: absolute;
-  top: 30%;
-  left: 25%;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.product-baner {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.product-baner img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
 }

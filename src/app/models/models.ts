@@ -20,7 +20,6 @@ export interface User {
   modifiedAt: string;
 }
 
-// #region Product
 
 export interface Offer {
   id: number;
@@ -53,9 +52,7 @@ export interface Review {
   createdAt: string;
 }
 
-// #endregion
 
-// #region Cart
 
 export interface CartItem {
   id: number;
@@ -70,9 +67,6 @@ export interface Cart {
   orderedOn: string;
 }
 
-// #endregion
-
-// #region Payment and Orders
 
 export interface PaymentMethod {
   id: number;
@@ -101,4 +95,3 @@ export interface Order {
   createdAt: string;
 }
 
-// #endregion
