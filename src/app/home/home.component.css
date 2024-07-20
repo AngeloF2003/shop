@@ -9,7 +9,6 @@
 .product-baner {
   position: relative;
   text-align: center;
-  color: white;
 }
 
 .product-baner img {
@@ -22,3 +21,7 @@
   image-rendering: crisp-edges;
   image-rendering: pixelated;
 }
+.product-list{
+  column-gap: 30px;
+}
+
