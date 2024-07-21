@@ -3,6 +3,7 @@ import { NavigationItem, Category } from '../models/models';
 import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
 import { Type } from '@angular/core';
+import { NavigationService } from '../services/navigation.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -23,11 +24,28 @@ navigationList: NavigationItem[] =[
     subcategories: ["chairs", "tables"]
   }
 ]
-constructor(){
+constructor(private navigationService: NavigationService){
 
 }
 ngOnInit(): void {
 
+  this.navigationService.getCategoryList().subscribe((list: Category[]) => {
+    for (let item of list) {
+      let present = false;
+      for (let navItem of this.navigationList) {
+        if (navItem.category === item.category) {
+          navItem.subcategories.push(item.subCategory);
+          present = true;
+        }
+      }
+      if (!present) {
+        this.navigationList.push({
+          category: item.category,
+          subcategories: [item.subCategory],
+        });
+      }
+    }
+  });
 }
 openModal(name: string) {
   this.container.clear();
